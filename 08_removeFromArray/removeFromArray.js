@@ -1,5 +1,9 @@
-const removeFromArray = function() {
-};
+const removeFromArray = function (array, ...removeElem) {
+  const setToRemove = new Set(removeElem);
+  
+  const newArr = array.filter(function (element) {
+    return !setToRemove.has(element);
+  });
 
-// Do not edit below this line
-module.exports = removeFromArray;
+  return newArr;
+};
